@@ -4,10 +4,8 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient
 import sky.bridge.service.impl.bin.model.BinResp
 import javax.ws.rs.*
 import io.smallrye.mutiny.Uni
-import javax.enterprise.context.ApplicationScoped
 import javax.ws.rs.core.MediaType
 
-@ApplicationScoped
 @RegisterRestClient(configKey = "bin-service")
 interface BinClient {
     @GET

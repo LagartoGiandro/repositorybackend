@@ -4,13 +4,14 @@ import io.quarkus.vertx.web.Param
 import io.quarkus.vertx.web.Route
 import io.smallrye.mutiny.Uni
 import io.vertx.ext.web.RoutingContext
-import sky.bridge.ph.service.impl.bin.BinImpl
+import sky.bridge.ph.service.ServiceInterface
 import sky.bridge.service.impl.bin.model.BinResp
 import javax.enterprise.context.ApplicationScoped
 import javax.ws.rs.core.MediaType
 
+@ApplicationScoped
 class SampleResource (
-    private val service: BinImpl
+    private val service: ServiceInterface
 ) {
     @Route(
         path = "/uniqueIdentifier/:cardNo",
