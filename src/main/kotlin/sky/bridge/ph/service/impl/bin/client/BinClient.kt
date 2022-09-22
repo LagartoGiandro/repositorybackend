@@ -9,7 +9,16 @@ import javax.ws.rs.core.MediaType
 @RegisterRestClient(configKey = "bin-service")
 interface BinClient {
     @GET
-    @Path("/{public}")
+    @Path("/{get-public}")
     @Produces(MediaType.APPLICATION_JSON)
-    fun uniqueIdentifier(@PathParam("public") id: String?) : Uni<BinResp>
+    fun uniqueIdentifier(@PathParam("get-public") id: String?) : Uni<BinResp>
+
+    @POST
+    @Path("/{post-public}")
+    @Consumes(value = [MediaType.APPLICATION_FORM_URLENCODED])
+    @Produces(MediaType.APPLICATION_JSON)
+    fun postIdentifier(@PathParam("post-public") id: String?) : Uni<BinResp>
+    fun info(message: String) {
+
+    }
 }

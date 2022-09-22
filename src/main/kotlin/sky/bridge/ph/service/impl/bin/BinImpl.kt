@@ -9,7 +9,16 @@ import javax.enterprise.context.ApplicationScoped
 
 @ApplicationScoped
 class BinImpl (
+    private val name: BinClient,
+    private val sub_name: BinClient,
+
     @RestClient private val client: BinClient
     ): ServiceInterface {
     override fun uniqueIdentifier(cardNo: String?): Uni<BinResp> = this.client.uniqueIdentifier(cardNo)
+
+    override fun postIdentifier(new_cardNo: String?): Uni<BinResp> {
+        return TODO("Provide the return value")
+    }
+
+
 }
